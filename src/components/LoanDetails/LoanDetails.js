@@ -23,7 +23,7 @@ export default function LoanDetails({ formData, setFormData, setStep }) {
         ))
         // setStep(prev => prev + 1);
 
-        fetch('http://localhost:5000/formData', {
+        fetch('https://form-dygnify-server.vercel.app/formData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
