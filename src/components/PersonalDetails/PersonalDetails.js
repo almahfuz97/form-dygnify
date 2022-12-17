@@ -35,39 +35,39 @@ export default function PersonalDetails({ formData, setFormData, setStep }) {
                 />
                 <div>
                     {
-                        errors.firstName && <p className=' text-red-400 text-xs'>{errors.firstName?.message}</p>
+                        errors.firstName && <p className=' mt-1 text-red-400 text-xs'>{errors.firstName?.message}</p>
                     }</div>
                 <input placeholder='Last Name' value={formData.lastName} type="text" {...register('lastName', { required: 'Last Name is required' })}
                     className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 mt-2 shadow-sm'
                 />
                 <div>
                     {
-                        errors.lastName && <p className=' text-red-400 text-xs'>{errors.lastName?.message}</p>
+                        errors.lastName && <p className=' mt-1 text-red-400 text-xs'>{errors.lastName?.message}</p>
                     }</div>
                 <input placeholder='Email' value={formData.email} type="email" {...register('email', { required: 'Email is required' })}
                     className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 mt-2 shadow-sm'
                 />
                 <div>
                     {
-                        errors.email && <p className=' text-red-400 text-xs'>{errors.email?.message}</p>
+                        errors.email && <p className=' mt-1 text-red-400 text-xs'>{errors.email?.message}</p>
                     }</div>
                 <input placeholder='Cell Number' value={formData.mobile} type="number" {...register('mobile', { required: 'Phone number is required' })}
                     className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 mt-2 shadow-sm'
                 />
                 <div>
                     {
-                        errors.mobile && <p className=' text-red-400 text-xs'>{errors.mobile?.message}</p>
+                        errors.mobile && <p className=' mt-1 text-red-400 text-xs'>{errors.mobile?.message}</p>
                     }</div>
                 <input placeholder='Age' value={formData.age} type="number" {...register('age', { required: 'Age is required' })}
                     className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 mt-2 shadow-sm'
                 />
                 <div>
                     {
-                        errors.age && <p className=' text-red-400 text-xs'>{errors.age?.message}</p>
+                        errors.age && <p className=' mt-1 text-red-400 text-xs'>{errors.age?.message}</p>
                     }</div>
 
                 <div className=' flex justify-center'>
-                    <input type="submit" value='Submit' className='border cursor-pointer hover:text-green-400 font-bold w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-2 text-center' />
+                    <input type="submit" value='Next' className='border cursor-pointer hover:text-green-400 font-bold text-purple-400 w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-2 text-center ' />
                 </div>
             </form>
         </div>

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 export default function LoanDetails({ formData, setFormData, setStep }) {
     const { register, watch, handleSubmit, formState: { errors } } = useForm();
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         setFormData(prev => ({
@@ -23,6 +24,7 @@ export default function LoanDetails({ formData, setFormData, setStep }) {
         ))
         // setStep(prev => prev + 1);
 
+        setLoading(true)
         fetch('https://form-dygnify-server.vercel.app/formData', {
             method: 'POST',
             headers: {
@@ -49,10 +51,12 @@ export default function LoanDetails({ formData, setFormData, setStep }) {
                         loanTenure: '',
                         age: ''
                     })
+                    setLoading(false)
                 }
             })
             .catch(err => {
                 console.log(err)
+                setLoading(false)
 
             })
         console.log(formData)
@@ -94,8 +98,14 @@ export default function LoanDetails({ formData, setFormData, setStep }) {
                     }</div>
 
 
-                <input type="submit" value='Submit'
-                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4' />
+                {
+                    loading ? <div className=' flex justify-center'>
+                        <input disabled value='Loading...'
+                            className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4 cursor-pointer hover:text-green-500 font-bold uppercase text-purple-400 text-center' />
+                    </div> :
+                        <input type="submit" value='Finish'
+                            className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4 cursor-pointer hover:text-green-500 font-bold uppercase text-purple-400 text-center' />
+                }
             </form>
         </div>
     )

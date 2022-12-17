@@ -36,7 +36,8 @@ export default function BusinessDetails({ formData, setFormData, setStep }) {
                 <div>
                     {
                         errors.businessName && <p className='mt-1 text-red-400 text-xs'>{errors.businessName?.message}</p>
-                    }</div>
+                    }
+                </div>
 
                 <input value={formData.gst} type="number" {...register('gst', { required: 'Last Name is required' })}
                     placeholder='GST'
@@ -67,8 +68,8 @@ export default function BusinessDetails({ formData, setFormData, setStep }) {
                     }</div>
 
 
-                <input type="submit" value='Submit'
-                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4' />
+                <input type="submit" value='Next'
+                    className='border w-full p-2 rounded-lg text-purple-400 drop-shadow-sm shadow-purple-400 shadow-sm mt-4 cursor-pointer' />
             </form>
         </div>
     )
