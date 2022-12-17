@@ -36,7 +36,7 @@ export default function Form() {
 
     return (
         <div className=' p-8 w-full  flex justify-center '>
-            <div className='md:w-[35%] w-[85%] border md:p-8 p-4 rounded-lg shadow'>
+            <div className='md:w-[35%] w-[85%] border md:p-8 p-8 rounded-lg shadow'>
                 <div>
                     <h2 className=' text-center mb-12 font-bold md:text-2xl text-lg text-purple-400'>Loan Application Form</h2>
                 </div>
