@@ -36,9 +36,9 @@ export default function Form() {
 
     return (
         <div className=' p-8 w-full  flex justify-center '>
-            <div className='md:w-[30%] w-[85%] border p-8 rounded-lg shadow'>
+            <div className='md:w-[35%] w-[85%] border md:p-8 p-4 rounded-lg shadow'>
                 <div>
-                    <h2 className=' text-center mb-12 font-bold text-2xl text-purple-400'>Loan Application Form</h2>
+                    <h2 className=' text-center mb-12 font-bold md:text-2xl text-lg text-purple-400'>Loan Application Form</h2>
                 </div>
                 <div className='relative my-8 '>
                     <ul className=' flex justify-between'>
@@ -51,6 +51,7 @@ export default function Form() {
                     <div className={`h-1  -z-10 w-[33.3%] ${step > 1 ? 'bg-green-400' : 'bg-gray-400'} left-[33.3%] absolute top-1/2`}></div>
                     <div className={`h-1  -z-10 w-[33.3%] ${step > 2 ? 'bg-green-400' : 'bg-gray-400'} left-[66.6%] absolute top-1/2`}></div>
                 </div>
+
                 <div className=' flex items-center gap-1'>
                     <img src={arrow} alt="" className=' cursor-pointer ' hidden={step === 0 || step === 3} onClick={() => setStep((prev) => prev - 1)} /> <h3 className=' uppercase font-bold text-purple-400'>{formTitles[step]}</h3>
                 </div>
