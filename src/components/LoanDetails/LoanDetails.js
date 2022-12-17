@@ -60,23 +60,42 @@ export default function LoanDetails({ formData, setFormData, setStep }) {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input value={formData.loanAmount} type="number" {...register('loanAmount', { required: 'This field is required' })} />
-                {
-                    errors.loan && <p>{errors.loan?.message}</p>
-                }
-                <br />
-                <input value={formData.loanInterest} type="number" {...register('loanInterest', { required: 'This field required' })} />
-                {
-                    errors.interest && <p>{errors.interest?.message}</p>
-                }
-                <br />
-                <input value={formData.loanTenure} type="number" {...register('loanTenure', { required: 'Tenure is required' })} />
-                {
-                    errors.loanTenure && <p>{errors.loanTenure?.message}</p>
-                }
-                <br />
+                <input value={formData.loanAmount} type="number" {...register('loanAmount', { required: 'This field is required' })}
+                    placeholder='Amount'
+                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4'
+                />
+                <div>
 
-                <input type="submit" value='Submit' />
+
+                    {
+                        errors.loanAmount && <p className='mt-1 text-red-500 text-xs'>{errors.loanAmount?.message}</p>
+                    }
+                </div>
+                <input value={formData.loanInterest} type="number" {...register('loanInterest', { required: 'This field required' })}
+                    placeholder='Interest rate'
+                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4'
+                />
+                <div>
+
+
+                    {
+                        errors.loanInterest && <p className='mt-1 text-red-500 text-xs'>{errors.loanInterest?.message}</p>
+                    }
+                </div>
+                <input value={formData.loanTenure} type="number" {...register('loanTenure', { required: 'Tenure is required' })}
+                    placeholder='Tenure (month)'
+                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4'
+                />
+                <div>
+
+
+                    {
+                        errors.loanTenure && <p className='mt-1 text-red-500 text-xs'>{errors.loanTenure?.message}</p>
+                    }</div>
+
+
+                <input type="submit" value='Submit'
+                    className='border w-full p-2 rounded-lg drop-shadow-sm shadow-purple-400 shadow-sm mt-4' />
             </form>
         </div>
     )

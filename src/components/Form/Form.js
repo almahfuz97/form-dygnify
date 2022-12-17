@@ -37,23 +37,22 @@ export default function Form() {
         setStep(prev => prev + 1)
     }
     return (
-        <div>
-            <div>
-                {formTitles[step]}
-            </div>
-            <div>
-                {
-                    currentForm()
-                }
-            </div>
-            <div>
+        <div className=' p-8 w-full border flex justify-center '>
+            <div className='md:w-[30%] w-[85%] border p-8 rounded-lg shadow'>
+                <div>
+                    {formTitles[step]}
+                </div>
+                <div>
+                    {
+                        currentForm()
+                    }
+                </div>
+                <div className=' flex'>
+                    <button disabled={step === 0} onClick={() => setStep((prev) => prev - 1)} >
+                        Back
+                    </button>
 
-            </div>
-            <div className=' flex'>
-                <button disabled={step === 0} onClick={() => setStep((prev) => prev - 1)} >
-                    Back
-                </button>
-
+                </div>
             </div>
         </div>
     )
